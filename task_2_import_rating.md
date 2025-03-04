@@ -1,4 +1,4 @@
-[cloudera@quickstart ~]$ sqoop --options-file task_2_imp_rating.txt
+```[cloudera@quickstart ~]$ sqoop --options-file task_2_imp_rating.txt
 Warning: /usr/lib/sqoop/../accumulo does not exist! Accumulo imports will fail.
 Please set $ACCUMULO_HOME to the root of your Accumulo installation.
 25/03/04 08:32:07 INFO sqoop.Sqoop: Running Sqoop version: 1.4.6-cdh5.12.0
@@ -73,4 +73,5 @@ Note: Recompile with -Xlint:deprecation for details.
 		Bytes Written=2372758
 25/03/04 08:33:42 INFO mapreduce.ImportJobBase: Transferred 2.2628 MB in 78.1481 seconds (29.6507 KB/sec)
 25/03/04 08:33:42 INFO mapreduce.ImportJobBase: Retrieved 100000 records.
+```
 
