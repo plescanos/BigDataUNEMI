@@ -1,0 +1,38 @@
+```
+[cloudera@quickstart ~]$ hdfs dfs -cat /user/cloudera/raitings_data/part-m-00000
+cat: `/user/cloudera/raitings_data/part-m-00000': No such file or directory
+[cloudera@quickstart ~]$ hadoop fs -text /user/cloudera/ratings_data/part-m-00000
+25/03/04 14:03:01 INFO compress.CodecPool: Got brand-new decompressor [.snappy]
+25/03/04 14:03:01 INFO compress.CodecPool: Got brand-new decompressor [.snappy]
+25/03/04 14:03:01 INFO compress.CodecPool: Got brand-new decompressor [.snappy]
+25/03/04 14:03:01 INFO compress.CodecPool: Got brand-new decompressor [.snappy]
+-text: Fatal internal error
+java.lang.RuntimeException: java.io.IOException: WritableName can't load class: ratings
+	at org.apache.hadoop.io.SequenceFile$Reader.getValueClass(SequenceFile.java:2110)
+	at org.apache.hadoop.io.SequenceFile$Reader.init(SequenceFile.java:2040)
+	at org.apache.hadoop.io.SequenceFile$Reader.initialize(SequenceFile.java:1881)
+	at org.apache.hadoop.io.SequenceFile$Reader.<init>(SequenceFile.java:1830)
+	at org.apache.hadoop.fs.shell.Display$TextRecordInputStream.<init>(Display.java:222)
+	at org.apache.hadoop.fs.shell.Display$Text.getInputStream(Display.java:152)
+	at org.apache.hadoop.fs.shell.Display$Cat.processPath(Display.java:101)
+	at org.apache.hadoop.fs.shell.Command.processPaths(Command.java:317)
+	at org.apache.hadoop.fs.shell.Command.processPathArgument(Command.java:289)
+	at org.apache.hadoop.fs.shell.Command.processArgument(Command.java:271)
+	at org.apache.hadoop.fs.shell.Command.processArguments(Command.java:255)
+	at org.apache.hadoop.fs.shell.FsCommand.processRawArguments(FsCommand.java:118)
+	at org.apache.hadoop.fs.shell.Command.run(Command.java:165)
+	at org.apache.hadoop.fs.FsShell.run(FsShell.java:315)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:70)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:84)
+	at org.apache.hadoop.fs.FsShell.main(FsShell.java:372)
+Caused by: java.io.IOException: WritableName can't load class: ratings
+	at org.apache.hadoop.io.WritableName.getClass(WritableName.java:77)
+	at org.apache.hadoop.io.SequenceFile$Reader.getValueClass(SequenceFile.java:2108)
+	... 16 more
+Caused by: java.lang.ClassNotFoundException: Class ratings not found
+	at org.apache.hadoop.conf.Configuration.getClassByName(Configuration.java:2108)
+	at org.apache.hadoop.io.WritableName.getClass(WritableName.java:75)
+	... 17 more
+
+
+```
